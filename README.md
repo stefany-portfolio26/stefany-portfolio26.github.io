@@ -4,8 +4,7 @@ This website, including all code, design, texts, images and videos, is the intel
 
 You may not copy, reproduce, modify, distribute, or use any part of this repository or website without prior written permission. This includes use for training artificial intelligence or machine learning models. Viewing the site is allowed. Forking on GitHub does not grant any right to use the contents.
 
-Contact me for permission or licensing.
-
+Contact me for permission or licensing: stefzhur@gmail.com
 ---
 
 # © Все права защищены
@@ -14,8 +13,7 @@ Contact me for permission or licensing.
 
 Запрещено копировать, воспроизводить, изменять, распространять или использовать любую часть этого репозитория или сайта без предварительного письменного разрешения. Это включает использование для обучения нейросетей и моделей машинного обучения. Просмотр сайта разрешён. Форк на GitHub не даёт никаких прав на использование содержимого.
 
-Для получения разрешения или лицензии свяжитесь со мной.
-
+Для получения разрешения или лицензии свяжитесь со мной: stefzhur@gmail.com
 ---
 
 # © Усі права захищено
@@ -24,4 +22,4 @@ Contact me for permission or licensing.
 
 Заборонено копіювати, відтворювати, змінювати, поширювати або використовувати будь-яку частину цього репозиторію чи сайту без попереднього письмового дозволу. Це стосується й використання для навчання нейромереж та моделей машинного навчання. Перегляд сайту дозволено. Форк на GitHub не надає жодних прав на використання вмісту.
 
-Для отримання дозволу або ліцензії зв'яжіться зі мною.
+Для отримання дозволу або ліцензії зв'яжіться зі мною: stefzhur@gmail.com
