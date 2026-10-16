@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 2026 | Stefany Zhuravleva</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,700&family=Arimo:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+<meta name="author" content="Stefany Zhuravleva">
+<meta name="copyright" content="© 2026 Stefany Zhuravleva">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<meta name="description" content="Портфолио Стефании Журавлёвой 2026: UI/UX, цифровая иллюстрация, 3D и моушн-дизайн">
+</head>
+<body>
+
+    <div id="cursor-aura"></div>
+
+    <div class="lang-switch" id="lang-switch">
+        <div class="lang-menu">
+            <button type="button" data-lang="ru" onclick="setLang('ru')">RU</button>
+            <button type="button" data-lang="uk" onclick="setLang('uk')">UA</button>
+            <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+        <button type="button" class="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+            <i class="fa-solid fa-globe"></i><span data-lang-label>RU</span>
+        </button>
+    </div>
+
+    <div id="project-modal">
+        <div class="modal-close" onclick="closeModal()">✕</div>
+        <div class="modal-content">
+            <div class="modal-gallery" id="modal-gallery"></div>
+            <div class="modal-text">
+                <div class="modal-meta">
+                    <span id="modal-category">Category</span>
+                    <p id="modal-tech" style="font-weight: 800; font-size: 0.9rem;">Software</p>
+                </div>
+                <h2 id="modal-title">Project Title</h2>
+                <p id="modal-desc" style="line-height: 1.8; font-size: 1.1rem;"></p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#home" data-i18n="nav.home">Home</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <div class="nav-links nav-item-works">
+                <a href="#portfolio" style="background: rgba(206, 181, 181, 0.04)"><b data-i18n="nav.works" style="font-weight:inherit">Works</b> <span>▾</span></a>
+                <div class="submenu">
+                    <a href="#digital" style="color: var(--fourth)" data-i18n="nav.digital">Digital</a>
+                    <a href="#visual" style="color: var(--third)" data-i18n="nav.visual">Visual</a>
+                    <a href="#chaos" style="color: var(--secondary)" data-i18n="nav.motion">3D & Motion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="blob" style="width: 500px; height: 500px; background: var(--accent); top: -10%; left: 0%;"></div>
+        <div class="blob" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 0%;"></div>
+        <h1 class="hero-title" id="title-anim" aria-label="Portfolio">
+            <span data-v="0.05">P</span><span data-v="-0.08">O</span><span data-v="0.12">R</span><span data-v="-0.1">T</span><span data-v="0.15">F</span><span data-v="0.08">O</span><span data-v="-0.12">L</span><span data-v="0.1">I</span><span data-v="-0.05">O</span>
+        </h1>
+        <p data-i18n="hero.sub" style="position: absolute; bottom: 10%; letter-spacing: 12px; font-weight: 800; font-size: 0.9rem; opacity: 0.6;">ЖУРАВЛЕВА СТЕФАНИЯ // 2026</p>
+    </header>
+
+    <section class="about-section" id="about">
+        <div class="about-info" data-aos="fade-right">
+            <h2>Digital <br><i>Artist</i></h2>
+            <p class="description">
+                <span data-i18n="about.desc">Живой набросок и цифровое пространство.</span> <br>
+                <span class="nav-links">
+                    <a href="#digital" class="link-digital" data-i18n="cat.digital">Digital & Web</a> | 
+                    <a href="#visual" class="link-visual" data-i18n="cat.visual">Visual Arts</a> | 
+                    <a href="#chaos" class="link-motion" data-i18n="cat.motion">3D & Motion</a>
+                </span>
+            </p>
+        </div>
+        <div class="about-details" data-aos="fade-left">
+            <div class="info-box"><p class="info-tag" data-i18n="about.edu">Education</p><p data-i18n="about.eduval">ВХУТЕИН '26</p></div>
+            <div class="info-box"><p class="info-tag" data-i18n="about.focus">Focus</p><p>UI/UX & Design</p></div>
+            <div class="info-box">
+                <p class="info-tag" data-i18n="about.contacts">Contacts</p>
+                <p>
+                    <span class="copy-link" onclick="copyAction('stefzhur@gmail.com', 'toast.email')">Email</span>
+                </p>
+            </div>
+            <div class="info-box">
+                <p class="info-tag" data-i18n="about.social">Social</p>
+                <p>
+                    <span class="copy-link" onclick="copyAction('https://t.me/spaceshiftend', 'toast.telegram')">Telegram</span> | 
+                    <span class="copy-link" onclick="copyAction('https://www.behance.net/spaceshiftend', 'toast.behance')">Behance</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-container">
+        <div class="skills-wrap">
+            <div class="skill-pill" style="--p: 80%" data-aos="fade-up">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" class="skill-icon figma-icon" alt="Figma">
+                <div class="skill-info"><strong>Figma</strong> <span>8/10</span></div>
+                <div class="skill-line" style="background: var(--secondary)"></div>
+            </div>
+
+            <div class="skill-pill" style="--p: 50%" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/Blender_logo.svg"
+                    data-hover="img/Blender_logo.svg"
+                    class="skill-icon blender-icon"
+                    alt="Blender">
+                <div class="skill-info"><strong>Blender</strong> <span>5/10</span></div>
+                <div class="skill-line"></div>
+            </div>
+
+            <div class="skill-pill" style="--p: 90%" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-icon draw-icon-mask" alt="Art"></div>
+                <div class="skill-info"><strong>Art</strong> <span>9/10</span></div>
+                <div class="skill-line" style="background: var(--third)"></div>
+            </div>    
+
+            <div class="skill-pill adobe-trigger" id="adobe-btn" data-aos="fade-up" style="cursor: pointer; border: none;">
+                <svg class="skill-icon adobe-icon-svg" viewBox="0 0 16.2 14.4" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 5.996094,0 H 0 v 14.339843 z"/>
+                    <path d="m 10.214844,0 h 5.988281 v 14.339843 z"/>
+                    <path d="m 8.105469,5.285156 3.816406,9.054687 H 9.417969 L 8.277344,11.457031 H 5.484375 Z"/>
+                </svg>
+                
+                <div class="skill-info"><strong>Adobe Suite</strong> <span data-i18n="skills.click">click</span></div>
+                <div class="skill-line" style="background: var(--accent)"></div>
+            </div>
+        </div>
+    
+        <div class="adobe-extra-row" id="adobe-content">
+            <div class="skills-wrap">
+                <div class="skill-pill" style="--p: 80%">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" class="skill-icon ps-icon" alt="Photoshop">
+                    <div class="skill-info"><strong>Photoshop</strong> <span>8/10</span></div>
+                    <div class="skill-line" style="background: var(--fourth)"></div>
+                </div>
+    
+                <div class="skill-pill" style="--p: 80%">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" class="skill-icon ai-icon" alt="Illustrator">
+                    <div class="skill-info"><strong>Illustrator</strong> <span>8/10</span></div>
+                    <div class="skill-line" style="background: var(--accent)"></div>
+                </div>
+    
+                <div class="skill-pill" style="--p: 70%">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" class="skill-icon ae-icon" alt="After Effects">
+                    <div class="skill-info"><strong>After Effects</strong> <span>7/10</span></div>
+                    <div class="skill-line" style="background: var(--third)"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="more-skills" id="extra-skills">
+            <div class="more-skills-inner">
+                <div class="skills-wrap">
+                    <div class="skill-pill" style="--p: 60%" data-aos="fade-up">
+                        <span class="skill-icon code-icon" style="display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: monospace; font-size: 1.2rem;">&lt;/&gt;</span>
+                        <div class="skill-info"><strong>HTML & CSS</strong> <span>6/10</span></div>
+                        <div class="skill-line" style="background: var(--accent)"></div>
+                    </div>
+
+                    <div class="skill-pill tilda-pill" style="--p: 80%" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://static.tildacdn.com/tild3633-3931-4261-a634-393436646362/Tilda_logo-02.svg" 
+                             class="skill-icon tilda-icon" 
+                             alt="Tilda">
+                        <div class="skill-info"><strong>Tilda</strong> <span>8/10</span></div>
+                        <div class="skill-line" style="background: var(--accent)"></div>
+                    </div>
+                    
+                    <div class="skill-pill" style="--p: 60%" data-aos="fade-up" data-aos-delay="300">
+                        <img src="img/coreldraw-icon.webp" 
+                             class="skill-icon coreldraw-icon" 
+                             alt="CorelDRAW">
+                        <div class="skill-info">
+                            <strong>CorelDRAW</strong> 
+                            <span>6/10</span>
+                        </div>
+                        <div class="skill-line" style="background: var(--secondary)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-toggle-wrapper" id="skill-toggle">
+            <div class="toggle-circle"><i class="fa-solid fa-plus"></i></div>
+            <span class="toggle-text">Explore more tools</span>
+        </div>
+    </section>
+
+    <main class="portfolio-group" id="portfolio">
+        <h2 class="category-header header-digital" id="digital" data-aos="fade-right" data-i18n="cat.digital">Digital & Web</h2>
+        <div class="bento-grid">
+
+            <div class="bento-item span-2 row-2 project-card"
+                data-aos="fade-up"
+                style="cursor: pointer;" data-project="guara">
+                <!-- Фоновая картинка теперь в отдельном div, как в примере -->
+                <div class="bento-image" style="background-image: url('img/GuaraCover.webp');"></div>
+
+                <!-- Оверлей с тегами и заголовком — точно как в примере -->
+                <div class="item-overlay">
+                    <span class="category-tag">Hi-Fi Prototype</span>
+
+                    <div class="title-wrap">
+                        <h3>Дизайн сайта «Гуара»</h3>
+                        <span class="tech-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item span-2" style="visibility: hidden; pointer-events: none; grid-column: span 1; display: none;"></div>
+            <div style="grid-column: span 2; grid-row: span 1;"></div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="wolfcafe">
+                
+                <div class="bento-image" style="background-image: url('img/logowoolf.webp');"></div>
+
+                <div class="item-overlay">
+                    <span class="category-tag">Logo Book</span>
+                    <div class="title-wrap">
+                        <h3>Логобук кафе «Вульфчик»</h3>
+                        <span class="tech-tag">Figma / Photoshop / Illustrator</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="alter">
+                
+                <div class="bento-image" style="background-image: url('img/logoAlter.webp');"></div>
+            
+                <div class="item-overlay">
+                    <span class="category-tag">Branding · Identity · Guidelines</span>
+                    <div class="title-wrap">
+                        <h3>Гайдлайн студии «Альтер»</h3>
+                        <span class="tech-tag">Figma / Photoshop / Illustrator</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item span-2" style="visibility: hidden; pointer-events: none; grid-column: span 1; display: none;"></div>
+            <div style="grid-column: span 2; grid-row: span 1;"></div>
+
+            <div class="bento-item project-card" data-aos="fade-up"
+                style="cursor: pointer; background: 
+                radial-gradient(circle 220px at 12% 50%, rgba(255,196,82,0.22) 0%, transparent 70%),
+                radial-gradient(circle 220px at 88% 50%, rgba(167,157,218,0.25) 0%, transparent 70%),
+                #F0EEF9;" data-project="cliko">
+                <div class="bento-image" style="background-image: url('img/clikolog3.webp');"></div>
+                <div class="item-overlay">
+                    <span class="category-tag">Website</span>
+                    <div class="title-wrap">
+                        <h3>Сайт «Клико»</h3>
+                        <span class="tech-tag">Figma / Illustrator / VS Code</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== Новая бенто-карточка (без цикла, статичная обложка) ========== -->
+            <div class="bento-item" 
+                data-aos="fade-up" 
+                data-project="frogkiwi">               
+                <div class="bento-image" style="background-image: url('img/coverpattern.webp');"></div>
+                <div class="item-overlay">
+                    <span class="category-tag">Pattern</span>
+                    <div class="title-wrap">
+                        <h3>Frog & Kiwi patterns</h3>
+                        <span class="tech-tag">Illustrator / Photoshop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="category-header header-visual" id="visual" style="justify-content: flex-end;" data-aos="fade-left" data-i18n="cat.visual">Visual Arts</h2>
+        
+        <div class="bento-grid">
+            <div style="grid-column: span 1; grid-row: span 1;"></div>
+            <div style="grid-column: span 1; grid-row: span 1;"></div>
+
+            <div class="bento-item row-2" data-aos="fade-up"
+                data-project="posters">
+                
+                <div class="bento-image" style="background-image: url('img/g3.webp');"></div>
+                <div class="item-overlay">
+                    <span class="category-tag">Poster Series</span>
+                    <div class="title-wrap">
+                        <h3>Постеры «Гуара»</h3>
+                        <span class="tech-tag">Photoshop / Illustrator / Figma</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item row-2" data-aos="fade-up" 
+
+                data-project="comics">
+                <div class="bento-image" style="background-image: url('img/comicscover.webp'); background-size: 135%;"></div>
+            
+                <div class="item-overlay">
+                    <span class="category-tag">Comics</span>
+                    <div class="title-wrap">
+                        <h3>Комикс по мотивам басни «Мартышка и очки»</h3>
+                        <span class="tech-tag">Photoshop / MediBang Paint</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                 data-aos="fade-up" 
+                 data-project="ornament">
+         
+                 <div class="bento-image bento-image--contain" style="--w: 70%">
+                    <img src="img/preornament.webp" alt="Мезенская роспись" loading="lazy">
+                </div>
+         
+                <div class="item-overlay">
+                    <span class="category-tag">Ornament</span>
+                    <div class="title-wrap">
+                        <h3>Мезенская роспись</h3>
+                        <span class="tech-tag">Illustrator / Photoshop</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="stilllife">
+            
+
+                    <div class="bento-image bento-image--contain" style="--w: 55%">
+                        <img src="img/stilllife.webp" alt="Натюрморты" loading="lazy">
+                    </div>
+            
+                <div class="item-overlay">
+                    <span class="category-tag">Vector Illustration</span>
+                    <div class="title-wrap">
+                        <h3>Натюрморты</h3>
+                        <span class="tech-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="bento-item" 
+                 data-aos="fade-up" 
+                 data-project="guaracards">
+         
+                 <div class="bento-image bento-image--contain" style="--w: 120%">
+                    <img src="img/guara.webp" alt="Открытки «Гривистый волк»" loading="lazy">
+                </div>
+         
+                <div class="item-overlay">
+                    <span class="category-tag">Postcard</span>
+                    <div class="title-wrap">
+                        <h3>Открытки «Гривистый волк»</h3>
+                        <span class="tech-tag">Illustrator / Photoshop</span>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="bento-item" 
+                 data-aos="fade-up" 
+                 data-project="chestnut">
+         
+                <div class="bento-image bento-image--contain" style="--w: 100%">
+                    <img src="img/chestnut.webp" alt="Открытки «Каштан»" loading="lazy">
+                </div>
+
+         
+                <div class="item-overlay">
+                    <span class="category-tag">Postcard</span>
+                    <div class="title-wrap">
+                        <h3>Открытки «Каштан»</h3>
+                        <span class="tech-tag">Illustrator / Photoshop</span>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+
+            
+    <h2 class="category-header header-chaos" id="chaos" data-aos="fade-right" data-i18n="cat.motion">3D & Motion</h2>
+        <div class="bento-grid">
+
+            <div class="bento-item span-2 row-2"
+                data-aos="fade-up"
+                data-project="dino">
+
+                <div class="bento-image bento-image--contain" style="--w: 100%">
+                    <img src="img/dino.webp" alt="Динозаврик из Chrome" loading="lazy">
+                </div>
+
+
+                <div class="item-overlay">
+                    <span class="category-tag">3D Diorama</span>
+                    <div class="title-wrap">
+                        <h3>Динозаврик из Chrome</h3>
+                        <span class="tech-tag">Blender - Cycles</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                data-aos="fade-up" 
+                data-project="house">
+
+                <video class="bento-video"
+                    data-speed="1.5"
+                    data-start="9"
+                    data-play-from="0"
+                    muted loop playsinline preload="none"
+                    onloadedmetadata="this.currentTime = 9">
+                    <source src="img/house.mp4" type="video/mp4">
+                </video>
+                    
+                <div class="item-overlay">
+                    <span class="category-tag">Motion Design</span>
+                    <div class="title-wrap">
+                        <h3>Анимация дома</h3>
+                        <span class="tech-tag">Figma / Illustrator / After Effects</span>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="bento-item phantom" style="visibility: hidden; pointer-events: none; grid-column: span 1; display: none;"></div>
+            <div style="grid-column: span 1; grid-row: span 1;"></div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up"
+                    data-project="mp3">
+                
+                    <video class="bento-video" 
+                            data-start="0" 
+                            data-play-from="0" 
+                            muted loop playsinline preload="none" 
+                            onloadedmetadata="this.currentTime = 0">
+                        <source src="img/mp3.mp4" type="video/mp4">
+                    </video>
+                    
+                <div class="item-overlay">
+                    <span class="category-tag">3D Animation</span>
+                    <div class="title-wrap">
+                        <h3>MP3-плеер</h3>
+                        <span class="tech-tag">Blender - Eevee</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="oranges">
+                
+                <video class="bento-video" 
+                        data-start="2" 
+                        data-play-from="0" 
+                        muted loop playsinline preload="none" 
+                        onloadedmetadata="this.currentTime = 2">
+                    <source src="img/oranges.mp4" type="video/mp4">
+                </video>
+            
+                <div class="item-overlay">
+                    <span class="category-tag">Motion Design</span>
+                    <div class="title-wrap">
+                        <h3>Инфографика «Апельсин»</h3>
+                        <span class="tech-tag">Figma / After Effects</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="pumpkin">
+
+                    <video class="bento-video" 
+                            data-start="0" 
+                            data-play-from="0" 
+                            muted loop playsinline preload="none" 
+                            onloadedmetadata="this.currentTime = 0">
+                        <source src="img/pumpkin.mp4" type="video/mp4">
+                    </video>
+                    
+                <div class="item-overlay">
+                    <span class="category-tag">3D Animation</span>
+                    <div class="title-wrap">
+                        <h3>Тыква-привидение</h3>
+                        <span class="tech-tag">Blender - Cycles / After Effects</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="nighthouses">
+
+                    <video class="bento-video" 
+                            data-start="0.4" 
+                            data-play-from="0.4" 
+                            muted loop playsinline preload="none" 
+                            onloadedmetadata="this.currentTime = 0.4">
+                        <source src="img/nighthouses.mp4" type="video/mp4">
+                    </video>
+                            
+                <div class="item-overlay">
+                    <span class="category-tag">3D Animation</span>
+                    <div class="title-wrap">
+                        <h3>Дом под луной</h3>
+                        <span class="tech-tag">Blender - Cycles / After Effects</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item span-2 row-2" 
+                    data-aos="fade-up" 
+                    data-project="supshows">
+
+                    <video class="bento-video" 
+                            data-start="0" 
+                            data-play-from="0" 
+                            muted loop playsinline preload="none" 
+                            onloadedmetadata="this.currentTime = 0">
+                        <source src="img/supshows.mp4" type="video/mp4">
+                    </video>
+                    
+                <div class="item-overlay">
+                    <span class="category-tag">Motion Design</span>
+                    <div class="title-wrap">
+                        <h3>Звёздный бульон</h3>
+                        <span class="tech-tag">Figma / Illustrator / After Effects</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="grid-column: span 1; grid-row: span 1;"></div>
+
+            <div class="bento-item" 
+                    data-aos="fade-up" 
+                    data-project="ring">
+
+                    <video class="bento-video" 
+                            data-start="0" 
+                            data-play-from="0" 
+                            muted loop playsinline preload="none" 
+                            onloadedmetadata="this.currentTime = 0">
+                        <source src="img/ring.mp4" type="video/mp4">
+                    </video>
+                            
+                <div class="item-overlay">
+                    <span class="category-tag">3D Animation</span>
+                    <div class="title-wrap">
+                        <h3>Кольцо</h3>
+                        <span class="tech-tag">Blender - Cycles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="footer-tag" data-i18n="footer.tag">Let's create something</p>
+        <h2 class="footer-title"><b data-i18n="footer.contact" style="font-weight:inherit">contact</b> <span data-i18n="footer.me">me?</span></h2>
+    
+        <p class="footer-contacts">
+            <span class="copy-link" onclick="copyAction('stefzhur@gmail.com', 'toast.email')">Email</span>
+            <span class="footer-sep">|</span>
+            <span class="copy-link" onclick="copyAction('https://t.me/spaceshiftend', 'toast.telegram')">Telegram</span>
+            <span class="footer-sep">|</span>
+            <span class="copy-link" onclick="copyAction('https://www.behance.net/spaceshiftend', 'toast.behance')">Behance</span>
+        </p>
+    
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Stefany Zhuravleva. All rights reserved.</p>
+            <p class="footer-legal">Protected by copyright (Berne Convention). Copying and AI training without written permission are prohibited.</p>
+            <p class="footer-legal" data-i18n="footer.legal2">Охраняется авторским правом. Копирование и обучение нейросетей без письменного разрешения запрещены.</p>
+        </div>
+    </footer>
+
+    <div id="copy-toast" class="copy-toast"></div>
+        
+        <!-- ========== LIGHTBOX ========== -->
+        <div id="internal-lightbox" class="lightbox-overlay" onclick="closeLightbox(event)">
+            <!-- наполняется JS -->
+        </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
