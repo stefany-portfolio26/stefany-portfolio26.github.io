@@ -59,7 +59,6 @@ function legacyCopy(text) {
 // Аккаунтов пока нет: вместо копирования показываем сообщение (на английском).
 // Когда появятся, удалите нужную строку из списка, и ссылка снова будет копироваться.
 const NOT_READY = {
-    'toast.telegram': 'toast.telegram_na',
     'toast.behance': 'toast.behance_na'
 };
 
